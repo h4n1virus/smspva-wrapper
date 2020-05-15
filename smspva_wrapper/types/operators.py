@@ -1,0 +1,11 @@
+class Operators:
+    BEELINE_RU = 'Beeline_RU'
+    MTS_RU = 'MTS_RU'
+    MEGAFON_RU = 'Megafon_RU'
+    BEELINE_KZ = 'Beeline_KZ'
+    TELE2_KZ = 'Tele2_KZ'
+    ACTIV_KZ = 'Activ_KZ'
+    ALTEL_KZ = 'Altel_KZ'
+    LIFECELL_US = 'Lifecell_UA'
+    KYIVSTAR_UA = 'Kyivstar_UA'
+    VODAFONE_UA = 'Vodafone_UA'

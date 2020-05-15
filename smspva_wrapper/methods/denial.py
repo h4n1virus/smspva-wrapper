@@ -1,0 +1,42 @@
+from smspva_wrapper.caller import caller
+from smspva_wrapper.methods.helpers import responce_hack, check_errors
+from smspva_wrapper.errors import Errors
+
+
+def denial(api_base: str, service: str, country: str, _id: str) -> dict:
+    """Low level function to cancel the order to number you got
+    In this method id parameter is indicated from the response to request for phone number get_number
+
+    Args:
+        api_base (str): "http://smspva.com/priemnik.php?apikey=DSWAFvdedrE4"
+        service (str): "opt4"
+        country (str): "ru"
+        _id (str): "25623"
+
+    Returns:
+        dict: API call dictionary
+
+    Raises:
+        InvalidAPIKeyError
+        InsufficientFundsError
+        TooShortIntervalError
+        RepeatRequestLaterError
+        RequestSyntaxError
+        UnknownAPIError
+        NetworkingError
+        MaxRequestsPerMinuteError
+        NegativeKarmaError
+        MaxConcurrentStreamsError
+        DenialFailedError
+    """
+
+    q = f"{api_base}&metod=denial&service={service}&country={country}&id={_id}"
+    r = caller(q)
+    c = responce_hack(r)
+
+    if check_errors(c) is True:
+        return c
+    elif c['response'] == '2':
+        raise Errors.DenialFailedError(c)
+    else:
+        raise Errors.UnknownAPIError(c)
