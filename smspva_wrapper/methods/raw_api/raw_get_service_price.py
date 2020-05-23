@@ -1,6 +1,6 @@
 from smspva_wrapper.caller import Caller
 from .helpers import responce_hack, check_errors
-from smspva_wrapper.errors import Errors
+from smspva_wrapper.errors import *
 
 
 class RawGetServicePrice(Caller):
@@ -34,4 +34,4 @@ class RawGetServicePrice(Caller):
         if check_errors(c) is True:
             return c
         else:
-            raise Errors.UnknownAPIError(c)
+            raise UnknownAPIError(c)

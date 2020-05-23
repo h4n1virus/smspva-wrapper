@@ -23,33 +23,3 @@ from .errors import ProverkaNumberError
 from .errors import RedirectFailError
 from .errors import RedirectInvalidNumberFormat
 from .errors import UnsupportedBackendError
-
-
-class Errors(
-    GeneralError,
-    NetworkingError,
-    APIError,
-    UnknownAPIError,
-    MaxRequestsPerMinuteError,
-    NegativeKarmaError,
-    MaxConcurrentStreamsError,
-    InvalidAPIKeyError,
-    InsufficientFundsError,
-    TooShortIntervalError,
-    RepeatRequestLaterError,
-    RequestSyntaxError,
-    UserInfoError,
-    NumberAlreadyTakenError,
-    BanError,
-    GetSMSError,
-    DenialFailedError,
-    ClearSMSError,
-    BalanceSIMError,
-    ProverkaNumberForServiceError,
-    ProverkaGSMBusyError,
-    ProverkaNumberError,
-    RedirectFailError,
-    RedirectInvalidNumberFormat,
-    UnsupportedBackendError
-):
-    pass

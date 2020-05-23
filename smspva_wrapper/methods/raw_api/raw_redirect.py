@@ -1,6 +1,6 @@
 from smspva_wrapper.caller import Caller
 from .helpers import responce_hack, check_errors
-from smspva_wrapper.errors import Errors
+from smspva_wrapper.errors import *
 
 
 class RawRedirect(Caller):
@@ -41,8 +41,8 @@ class RawRedirect(Caller):
         if check_errors(c) is True:
             return c
         elif c['response'] == '2':
-            raise Errors.RedirectInvalidNumberFormat(c['forwarding'], c)
+            raise RedirectInvalidNumberFormat(c['forwarding'], c)
         elif c['response'] == '3':
-            raise Errors.RedirectFailError(c['forwarding'], c)
+            raise RedirectFailError(c['forwarding'], c)
         else:
-            raise Errors.UnknownAPIError(c)
+            raise UnknownAPIError(c)

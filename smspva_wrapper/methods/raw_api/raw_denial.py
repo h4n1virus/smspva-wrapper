@@ -1,6 +1,6 @@
 from smspva_wrapper.caller import Caller
 from .helpers import responce_hack, check_errors
-from smspva_wrapper.errors import Errors
+from smspva_wrapper.errors import *
 
 
 class RawDenial(Caller):
@@ -37,6 +37,6 @@ class RawDenial(Caller):
         if check_errors(c) is True:
             return c
         elif c['response'] == '2':
-            raise Errors.DenialFailedError(c)
+            raise DenialFailedError(c)
         else:
-            raise Errors.UnknownAPIError(c)
+            raise UnknownAPIError(c)

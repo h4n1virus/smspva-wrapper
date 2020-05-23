@@ -1,6 +1,6 @@
-from ..ext import Base
 from ..ext.containers import UserInfoContainer
 from ..methods import API
+from ..ext import Base
 
 
 class Client(API, Base):
@@ -16,9 +16,9 @@ class Client(API, Base):
     def __init__(
         self,
         api_key: str,
-        backend: str = 'simsms',
+        backend: str = 'smspva'
     ):
-        Base.__init__(self, api_key=api_key, backend=backend)
+        Base.__init__(api_key=api_key, backend=backend)
         self._name = self.me.name
 
     @property

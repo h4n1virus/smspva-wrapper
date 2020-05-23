@@ -1,6 +1,6 @@
 from smspva_wrapper.caller import Caller
 from .helpers import responce_hack, check_errors
-from smspva_wrapper.errors import Errors
+from smspva_wrapper.errors import *
 
 
 class RawGetProverka(Caller):
@@ -44,13 +44,13 @@ class RawGetProverka(Caller):
         else:
             e_msg = c['error_msg']
             if e_msg == 'Number shall consist of 10 digits!':
-                raise Errors.ProverkaNumberForServiceError(c)
+                raise ProverkaNumberForServiceError(c)
             elif e_msg == 'Such a number you did not order for the service':
-                raise Errors.ProverkaNumberForServiceError(c)
+                raise ProverkaNumberForServiceError(c)
             elif e_msg == 'The modem is busy, try to order in 5 minutes':
-                raise Errors.ProverkaGSMBusyError(c)
+                raise ProverkaGSMBusyError(c)
             elif 'not_number' in c:
                 if c['not_number'] == 'This number is no longer in the system':
-                    raise Errors.ProverkaNumberError(c)
+                    raise ProverkaNumberError(c)
             else:
-                raise Errors.UnknownAPIError(c)
+                raise UnknownAPIError(c)

@@ -1,6 +1,6 @@
 from smspva_wrapper.caller import Caller
 from .helpers import responce_hack, check_errors
-from smspva_wrapper.errors import Errors
+from smspva_wrapper.errors import *
 
 
 class RawGetUserinfo(Caller):
@@ -31,6 +31,6 @@ class RawGetUserinfo(Caller):
         if check_errors(c) is True:
             return c
         elif c['response'] == 'error':
-            raise Errors.UserInfoError(c['error_msg'], c)
+            raise UserInfoError(c['error_msg'], c)
         else:
-            raise Errors.UnknownAPIError(c)
+            raise UnknownAPIError(c)

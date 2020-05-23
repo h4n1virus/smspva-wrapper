@@ -1,8 +1,8 @@
-from smspva_wrapper.errors import Errors
+from smspva_wrapper.errors import UnsupportedBackendError
 
 
 class Base(object):
-    def __init__(self, api_key: str = None, backend: str = 'smspva'):
+    def __init__(self, api_key: str, backend: str = 'smspva'):
         self._api_key = api_key
         self._backend = self._get_backend(backend)
         self._api_base = f'{self._backend}apikey={self._api_key}'
@@ -14,8 +14,8 @@ class Base(object):
     @staticmethod
     def _get_backend(backend) -> str:
         if 'smspva' == backend.lower():
-            return 'http://smspva.com/priemnik.php?'
+            return 'https://smspva.com/priemnik.php?'
         elif 'simsms' == backend.lower():
             return 'https://simsms.org/priemnik.php?'
         else:
-            raise Errors.UnsupportedBackendError
+            raise UnsupportedBackendError

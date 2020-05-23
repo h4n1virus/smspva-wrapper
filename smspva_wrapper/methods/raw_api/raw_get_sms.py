@@ -1,6 +1,6 @@
 from smspva_wrapper.caller import Caller
 from .helpers import responce_hack, check_errors
-from smspva_wrapper.errors import Errors
+from smspva_wrapper.errors import *
 
 
 class RawGetSMS(Caller):
@@ -50,6 +50,6 @@ class RawGetSMS(Caller):
         elif c['response'] == '2':
             return c
         elif c['response'] == '3':
-            raise Errors.GetSMSError(c)
+            raise GetSMSError(c)
         else:
-            raise Errors.UnknownAPIError(c)
+            raise UnknownAPIError(c)

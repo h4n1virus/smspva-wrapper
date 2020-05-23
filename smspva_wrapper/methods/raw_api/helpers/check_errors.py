@@ -1,4 +1,4 @@
-from smspva_wrapper.errors import Errors
+from smspva_wrapper.errors import *
 
 
 def check_errors(d: dict) -> bool:
@@ -25,13 +25,13 @@ def check_errors(d: dict) -> bool:
     elif response_code == '3':
         return False
     elif response_code == '4':
-        raise Errors.UnknownAPIError(d)
+        raise UnknownAPIError(d)
     elif response_code == '5':
-        raise Errors.MaxRequestsPerMinuteError(d)
+        raise MaxRequestsPerMinuteError(d)
     elif response_code == '6':
-        raise Errors.NegativeKarmaError(d)
+        raise NegativeKarmaError(d)
     elif response_code == '7':
-        raise Errors.MaxConcurrentStreamsError(d)
+        raise MaxConcurrentStreamsError(d)
     elif response_code == 'error':
         return False
     elif response_code == 'modem_busy':
