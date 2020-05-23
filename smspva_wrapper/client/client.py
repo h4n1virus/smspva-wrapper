@@ -10,7 +10,7 @@ class Client(API, Base):
         api_key (str):
             The *APIKEY* of your SMSPVA/SIMSMS account as str: E.g: "DSWAFvdedrE4"
         backend (str):
-            Backend to be used: SMSPVA or SIMSMS
+            Backend to be used: SMSPVA or SIMSMS (defaults to smspva)
     """
 
     def __init__(
@@ -18,7 +18,7 @@ class Client(API, Base):
         api_key: str,
         backend: str = 'smspva'
     ):
-        Base.__init__(api_key=api_key, backend=backend)
+        Base.__init__(self, api_key=api_key, backend=backend)
         self._name = self.me.name
 
     @property

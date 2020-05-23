@@ -28,7 +28,6 @@ class Caller(Base):
             UnknownAPIError
         """
 
-        print(self.api_base)
         r = requests.get(f"{self.api_base}&{query}")
 
         log.debug(r.status_code, r.content)
