@@ -32,3 +32,7 @@ class Client(API, Base):
     @property
     def karma(self) -> float:
         return float(self.me.karma)
+
+    @property
+    def name(self) -> str:
+        return self._name
