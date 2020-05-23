@@ -1,7 +1,7 @@
 from smspva_wrapper import Client, Services
 from smspva_wrapper.types.countries import country_dict
 
-SMSPVA_API_KEY = ''  # SIMSMS KEY
+SMSPVA_API_KEY = ''  # SMSPVA KEY
 
 c = Client(api_key=SMSPVA_API_KEY, backend='smspva')  # backend is optional (defaults to smspva)
 
