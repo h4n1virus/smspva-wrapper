@@ -1,1 +1,1 @@
-from .caller import caller as caller
+from .caller import Caller

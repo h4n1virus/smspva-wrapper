@@ -1,3 +1,6 @@
+# TODO: THIS ENTIRE SHIT FUCKERY
+
+
 class Countries:
     """Countries as listed on SMSPVA"""
     RUSSIAN_FEDERATION = 'RU'   # 1

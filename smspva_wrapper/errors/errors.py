@@ -2,6 +2,10 @@ class GeneralError(Exception):
     """Base class for exceptions in this module."""
 
 
+class UnsupportedBackendError(GeneralError):
+    """Unsupported backend"""
+
+
 class NetworkingError(GeneralError):
     """Networking Error"""
 
