@@ -26,8 +26,8 @@ class CountNewContainer:
 
     @property
     def country(self) -> Countries:
-        return country_dict.get(self._data.get('country'))
+        return self._data.get('country')
 
     @property
     def service(self) -> Services:
-        return service_dict.get(self._data.get('Service'))
+        return self._data.get('Service')
