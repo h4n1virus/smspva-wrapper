@@ -33,5 +33,7 @@ class RawGetCountNew(Caller):
 
         if check_errors(c) is True:
             return c
+        elif c['Service'] == service:
+            return c
         else:
             raise UnknownAPIError(c)
