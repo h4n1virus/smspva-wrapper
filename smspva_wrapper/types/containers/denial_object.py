@@ -1,4 +1,4 @@
-class Denial:
+class DenialContainer:
     """Immutable high level container for denial query"""
 
     def __init__(self, data: dict):

@@ -1,4 +1,4 @@
-class Redirect:
+class RedirectContainer:
     """Immutable high level container for redirect"""
 
     def __init__(self, data: dict):

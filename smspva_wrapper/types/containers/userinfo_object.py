@@ -1,4 +1,4 @@
-class UserInfo:
+class UserInfoContainer:
     """Immutable high level container for get_userinfo"""
 
     def __init__(self, data: dict):

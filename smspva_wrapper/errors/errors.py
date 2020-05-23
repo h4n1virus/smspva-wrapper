@@ -2,6 +2,10 @@ class GeneralError(Exception):
     """Base class for exceptions in this module."""
 
 
+class UnrecognizableBackEndError(GeneralError):
+    """Unrecognizable backend"""
+
+
 class NetworkingError(GeneralError):
     """Networking Error"""
 
@@ -61,7 +65,7 @@ class NumberAlreadyTakenError(APIError):
 
 # ban
 class BanError(APIError):
-    """Ban request has failed"""
+    """RawBan request has failed"""
 
 
 # get_sms
@@ -71,7 +75,7 @@ class GetSMSError(APIError):
 
 # denial
 class DenialFailedError(APIError):
-    """Denial request has failed"""
+    """RawDenial request has failed"""
 
 
 # clearsms

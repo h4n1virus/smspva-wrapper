@@ -1,4 +1,4 @@
-class BalanceSIM(object):
+class BalanceSIMContainer(object):
     """Immutable high level container for balance_sim query"""
 
     def __init__(self, data: dict):

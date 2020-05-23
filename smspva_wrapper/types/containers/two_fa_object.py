@@ -1,4 +1,4 @@
-class TwoFA:
+class TwoFAContainer:
     """Immutable high level container for get_two_fa"""
 
     def __init__(self, data: dict):

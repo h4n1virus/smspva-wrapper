@@ -1,4 +1,4 @@
-class Ban(object):
+class BanContainer(object):
     """Immutable high level container for ban query"""
 
     def __init__(self, data: dict):

@@ -1,4 +1,4 @@
-class Balance(object):
+class BalanceContainer(object):
     """Immutable high level container for get_balance query"""
 
     def __init__(self, data: dict):

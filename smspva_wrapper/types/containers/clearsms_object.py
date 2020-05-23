@@ -1,4 +1,4 @@
-class ClearSMS:
+class ClearSMSContainer:
     """Immutable high level container for clearsms query"""
 
     def __init__(self, data: dict):

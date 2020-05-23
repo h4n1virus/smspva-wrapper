@@ -1,4 +1,4 @@
-class Number:
+class NumberContainer:
     """Immutable high level container for get_number query"""
 
     def __init__(self, data: dict):

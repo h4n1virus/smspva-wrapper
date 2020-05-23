@@ -1,4 +1,4 @@
-class Proverka:
+class ProverkaContainer:
     """Immutable high level container for get_proverka"""
 
     def __init__(self, data: dict):

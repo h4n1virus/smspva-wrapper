@@ -23,3 +23,4 @@ class Errors:
     from .errors import ProverkaNumberError
     from .errors import RedirectFailError
     from .errors import RedirectInvalidNumberFormat
+    from .errors import UnrecognizableBackEndError

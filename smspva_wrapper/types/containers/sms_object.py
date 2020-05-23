@@ -1,4 +1,4 @@
-class SMS:
+class SMSContainer:
     """Immutable high level container for get_sms"""
 
     def __init__(self, data: dict):

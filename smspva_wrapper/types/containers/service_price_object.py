@@ -1,8 +1,8 @@
-from ..countries import Countries, country_dict
-from ..services import Services, service_dict
+from smspva_wrapper.types.countries import Countries, country_dict
+from smspva_wrapper.types.services import Services, service_dict
 
 
-class ServicePrice:
+class ServicePriceContainer:
     """Immutable high level container for get_service_price"""
 
     def __init__(self, data: dict):

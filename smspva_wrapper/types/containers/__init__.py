@@ -1,14 +1,31 @@
-class Containers:
-    from .balance_object import Balance as Balance
-    from .balance_sim_object import BalanceSIM as BalanceSIM
-    from .ban_object import Ban as Ban
-    from .denial_object import Denial as Denial
-    from .count_new_object import CountNew as CountNew
-    from .number_object import Number as Number
-    from .proverka_object import Proverka as Proverka
-    from .redirect_object import Redirect as Redirect
-    from .service_price_object import ServicePrice as ServicePrice
-    from .sms_object import SMS as SMS
-    from .two_fa_object import TwoFA as TwoFA
-    from .userinfo_object import UserInfo as UserInfo
-    from .clearsms_object import ClearSMS as ClearSMS
+from .balance_object import BalanceContainer
+from .balance_sim_object import BalanceSIMContainer
+from .ban_object import BanContainer
+from .denial_object import DenialContainer
+from .count_new_object import CountNewContainer
+from .number_object import NumberContainer
+from .proverka_object import ProverkaContainer
+from .redirect_object import RedirectContainer
+from .service_price_object import ServicePriceContainer
+from .sms_object import SMSContainer
+from .two_fa_object import TwoFAContainer
+from .userinfo_object import UserInfoContainer
+from .clearsms_object import ClearSMSContainer
+
+
+class Containers(
+    BalanceContainer,
+    BalanceSIMContainer,
+    BanContainer,
+    DenialContainer,
+    CountNewContainer,
+    NumberContainer,
+    ProverkaContainer,
+    RedirectContainer,
+    ServicePriceContainer,
+    SMSContainer,
+    TwoFAContainer,
+    UserInfoContainer,
+    ClearSMSContainer
+):
+    pass
