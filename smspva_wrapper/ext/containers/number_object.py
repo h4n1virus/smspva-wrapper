@@ -1,8 +1,10 @@
 class NumberContainer:
     """Immutable high level container for get_number query"""
 
-    def __init__(self, data: dict):
+    def __init__(self, data: dict, country: str, service: str):
         self._data = data
+        self._country = country
+        self._service = service
 
     @property
     def data(self) -> dict:
@@ -27,3 +29,11 @@ class NumberContainer:
     @property
     def id(self) -> str:
         return self._data.get('id')
+
+    @property
+    def country(self) -> str:
+        return self._country
+
+    @property
+    def service(self) -> str:
+        return self._service

@@ -38,5 +38,7 @@ class GetNumber(RawGetNumber):
             self.raw_get_number(
                 service=str(service),
                 country=str(country)
-            )
+            ),
+            country=str(country),
+            service=str(service)
         )
