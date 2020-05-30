@@ -33,7 +33,9 @@ class RawGetCountNew(Caller):
 
         if check_errors(c) is True:
             return c
-        elif c['Service'] == service:
+        elif c.get('Service') == service:
+            return c
+        elif c.get('service') == service:
             return c
         else:
             raise UnknownAPIError(c)
