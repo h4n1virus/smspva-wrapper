@@ -30,6 +30,7 @@ class Caller(Base):
 
         r = requests.get(f"{self.api_base}&{query}")
 
+        print(r.content)
         log.debug(r.status_code, r.content)
 
         if r.status_code == 200:
