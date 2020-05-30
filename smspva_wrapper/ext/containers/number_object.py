@@ -13,8 +13,16 @@ class NumberContainer:
         return int(self._data.get('response'))
 
     @property
+    def country_code(self) -> str:
+        return self._data.get('CountryCode')
+
+    @property
     def number(self) -> str:
         return self._data.get('number')
+
+    @property
+    def full_number(self) -> str:
+        return f"{self.country_code}{self.number}"
 
     @property
     def id(self) -> str:
