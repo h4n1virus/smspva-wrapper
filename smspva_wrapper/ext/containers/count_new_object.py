@@ -30,4 +30,7 @@ class CountNewContainer:
 
     @property
     def service(self) -> Services:
-        return self._data.get('Service')
+        if self._daya.get('Service') is not None:
+            return self._data.get('Service')
+        else:
+            return self._data.get('service')
