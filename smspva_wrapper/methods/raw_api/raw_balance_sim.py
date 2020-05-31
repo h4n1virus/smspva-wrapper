@@ -1,5 +1,5 @@
 from smspva_wrapper.caller import Caller
-from .helpers import responce_hack, check_errors
+from .helpers import inconsistencies_hack, check_errors
 from smspva_wrapper.errors import *
 
 
@@ -30,7 +30,7 @@ class RawBalanceSim(Caller):
 
         q = f"metod=balance_sim&service={service}&id={_id}"
         r = self.call(q)
-        c = responce_hack(r)
+        c = inconsistencies_hack(r)
 
         if check_errors(c) is True:
             return c

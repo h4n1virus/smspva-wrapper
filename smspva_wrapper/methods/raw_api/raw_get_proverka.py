@@ -1,5 +1,5 @@
 from smspva_wrapper.caller import Caller
-from .helpers import responce_hack, check_errors
+from .helpers import inconsistencies_hack, check_errors
 from smspva_wrapper.errors import *
 
 
@@ -37,7 +37,7 @@ class RawGetProverka(Caller):
 
         q = f"metod=get_proverka&service={service}&id={number}"
         r = self.call(q)
-        c = responce_hack(r)
+        c = inconsistencies_hack(r)
 
         if check_errors(c) is True:
             return c

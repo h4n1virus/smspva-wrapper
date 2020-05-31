@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="smspva-wrapper",
-    version="0.0.2",
+    version="0.0.3",
     author="Terry",
     author_email="terry@beatwo.men",
     description="SMSPVA wrapper",

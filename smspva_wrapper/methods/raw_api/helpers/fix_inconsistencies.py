@@ -1,4 +1,4 @@
-def responce_hack(d: dict) -> dict:
+def inconsistencies_hack(d: dict) -> dict:
     """Shitty hack to fix inconsistencies in API responses
 
     Args:
@@ -9,5 +9,8 @@ def responce_hack(d: dict) -> dict:
     """
     if 'responce' in d:
         d['response'] = d.pop('responce')
+
+    if 'Service' in d:
+        d['service'] = d.pop('Service')
 
     return d

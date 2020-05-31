@@ -1,5 +1,5 @@
 from smspva_wrapper.caller import Caller
-from .helpers import responce_hack, check_errors
+from .helpers import inconsistencies_hack, check_errors
 from smspva_wrapper.errors import *
 
 
@@ -32,7 +32,7 @@ class RawDenial(Caller):
 
         q = f"metod=denial&service={service}&country={country}&id={_id}"
         r = self.call(q)
-        c = responce_hack(r)
+        c = inconsistencies_hack(r)
 
         if check_errors(c) is True:
             return c
