@@ -2,16 +2,17 @@ from typing import Union
 
 from ..raw_api import RawGetSMS
 from smspva_wrapper.types import Services, Countries
-from smspva_wrapper.ext.containers import SMSContainer
+from smspva_wrapper.ext.containers import SMSContainer, NumberContainer
 
 
 class GetSMS(RawGetSMS):
     def get_sms(
         self,
-        service: Union[Services, str],
-        country: Union[Countries, str],
-        _id: str,
-        sms: bool = False
+        service: Union[Services, str] = None,
+        country: Union[Countries, str] = None,
+        _id: str = None,
+        sms: bool = False,
+        *, number: NumberContainer = None
     ) -> SMSContainer:
         """Function for receiving a SMS for a certain service
         In this method id parameter is indicated from the response to request for phone number get_number
@@ -28,6 +29,7 @@ class GetSMS(RawGetSMS):
             country (Countries or str): KAZAKHSTAN or "KZ"
             _id (str): "25623"
             sms (bool): False
+            *number: (NumberContainer)
 
         Returns:
             SMSContainer
@@ -46,11 +48,21 @@ class GetSMS(RawGetSMS):
             GetSMSError
         """
 
-        return SMSContainer(
-            self.raw_get_sms(
-                service=str(service),
-                country=str(country),
-                _id=_id,
-                sms=sms
+        if NumberContainer:
+            return SMSContainer(
+                self.raw_get_sms(
+                    service=number.service,
+                    country=number.country,
+                    _id=number.id,
+                    sms=sms
+                )
             )
-        )
+        else:
+            return SMSContainer(
+                self.raw_get_sms(
+                    service=str(service),
+                    country=str(country),
+                    _id=_id,
+                    sms=sms
+                )
+            )
